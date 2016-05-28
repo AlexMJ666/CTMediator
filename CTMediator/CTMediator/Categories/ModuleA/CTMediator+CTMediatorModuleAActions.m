@@ -8,6 +8,7 @@
 
 #import "CTMediator+CTMediatorModuleAActions.h"
 
+//  target 是类名
 NSString * const kCTMediatorTargetA = @"A";
 
 NSString * const kCTMediatorActionNativFetchDetailViewController = @"nativeFetchDetailViewController";

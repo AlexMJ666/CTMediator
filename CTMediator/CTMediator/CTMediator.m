@@ -68,8 +68,11 @@
     NSString *targetClassString = [NSString stringWithFormat:@"Target_%@", targetName];
     NSString *actionString = [NSString stringWithFormat:@"Action_%@:", actionName];
     
+    // 类名
     Class targetClass = NSClassFromString(targetClassString);
     id target = [[targetClass alloc] init];
+    
+    // 
     SEL action = NSSelectorFromString(actionString);
     
     if (target == nil) {

@@ -10,6 +10,7 @@
 
 @interface DemoModuleADetailViewController : UIViewController
 
+
 @property (nonatomic, strong, readonly) UILabel *valueLabel;
 @property (nonatomic, strong, readonly) UIImageView *imageView;
 

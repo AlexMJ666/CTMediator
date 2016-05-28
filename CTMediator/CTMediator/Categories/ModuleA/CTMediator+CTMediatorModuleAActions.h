@@ -12,7 +12,9 @@
 @interface CTMediator (CTMediatorModuleAActions)
 
 - (UIViewController *)CTMediator_viewControllerForDetail;
+
 - (void)CTMediator_showAlertWithMessage:(NSString *)message cancelAction:(void(^)(NSDictionary *info))cancelAction confirmAction:(void(^)(NSDictionary *info))confirmAction;
+
 - (void)CTMediator_presentImage:(UIImage *)image;
 
 @end

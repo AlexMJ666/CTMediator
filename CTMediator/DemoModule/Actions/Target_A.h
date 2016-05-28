@@ -12,7 +12,9 @@
 @interface Target_A : NSObject
 
 - (UIViewController *)Action_nativeFetchDetailViewController:(NSDictionary *)params;
+
 - (id)Action_nativePresentImage:(NSDictionary *)params;
+
 - (id)Action_showAlert:(NSDictionary *)params;
 
 // 容错

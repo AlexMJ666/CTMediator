@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <HandyFrame/UIView+LayoutMethods.h>
 #import "CTMediator+CTMediatorModuleAActions.h"
+#import "CTMediator+DetailActions.h"
 
 NSString * const kCellIdentifier = @"kCellIdentifier";
 
@@ -48,16 +49,38 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     return cell;
 }
 
+
+/*
+ ViewController.h 是 组件 A
+ 
+ DemoModuleADetailViewController.h 是 组件 B
+ 
+ 
+ 组件A在某处调用
+ 
+ [[CTMediator sharedInstance] performTarget:targetName action:actionName params:@{...}]
+ 
+ 向CTMediator发起跨组件调用，CTMediator根据获得的target和action信息，通过objective-C的runtime转化生成target实例以及对应的action选择子，然后最终调用到目标业务提供的逻辑，完成需求。
+ 
+ */
+
+
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
-        UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_viewControllerForDetail];
         
-        // 获得view controller之后，在这种场景下，到底push还是present，其实是要由使用者决定的，mediator只要给出view controller的实例就好了
-        [self presentViewController:viewController animated:YES completion:nil];
+        UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_viewControllerForDetailWithParams:@{@"name":@"详情"}];
+        
+        [self.navigationController pushViewController:viewController animated:YES];
+//        [self presentViewController:viewController animated:YES completion:nil];
+        
+//        UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_viewControllerForDetail];
+//        
+//        // 获得view controller之后，在这种场景下，到底push还是present，其实是要由使用者决定的，mediator只要给出view controller的实例就好了
+//        [self presentViewController:viewController animated:YES completion:nil];
     }
     
     if (indexPath.row == 1) {
