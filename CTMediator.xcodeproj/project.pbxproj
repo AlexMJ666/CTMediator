@@ -209,11 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A5CE5111C9531C9006AEDB9 /* Build configuration list for PBXNativeTarget "CTMediator" */;
 			buildPhases = (
-				0DEB0101A9257C7385F33550 /* Check Pods Manifest.lock */,
+				0DEB0101A9257C7385F33550 /* 📦 Check Pods Manifest.lock */,
 				4A5CE4F61C9531C9006AEDB9 /* Sources */,
 				4A5CE4F71C9531C9006AEDB9 /* Frameworks */,
 				4A5CE4F81C9531C9006AEDB9 /* Resources */,
-				9707C81239BADCAA33999A4E /* Copy Pods Resources */,
+				9707C81239BADCAA33999A4E /* 📦 Copy Pods Resources */,
+				91449277C7A6C96AFC54594C /* 📦 Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,14 +271,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DEB0101A9257C7385F33550 /* Check Pods Manifest.lock */ = {
+		0DEB0101A9257C7385F33550 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,14 +286,29 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9707C81239BADCAA33999A4E /* Copy Pods Resources */ = {
+		91449277C7A6C96AFC54594C /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CTMediator/Pods-CTMediator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9707C81239BADCAA33999A4E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

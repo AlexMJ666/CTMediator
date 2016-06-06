@@ -8,7 +8,6 @@
 
 #import "CTMediator+DetailActions.h"
 
-
 //  target 是类名 Target_Detail.h
 NSString * const kCTMediatorTargetDetail = @"Detail";
 

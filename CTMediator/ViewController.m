@@ -72,9 +72,11 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     
     if (indexPath.row == 0) {
         
-        UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_viewControllerForDetailWithParams:@{@"name":@"详情"}];
+        UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_viewControllerForDetailWithParams:@{@"name":@"这是一段文字"}];
         
         [self.navigationController pushViewController:viewController animated:YES];
+        
+        
 //        [self presentViewController:viewController animated:YES completion:nil];
         
 //        UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_viewControllerForDetail];
